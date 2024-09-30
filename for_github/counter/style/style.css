@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: linear-gradient(to bottom right,#22092C, #872341, #BE3144, #F05941 90%);
+    gap: 20px
+}
+
+.counter {
+    width: 500px;
+    height: 500px;
+    box-shadow: 0 0 10px 0 black;
+    animation-name: popup;
+    animation-duration: 0.6s;
+}
+
+.counter_top {
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter_h1 {
+    font-size: 500%; 
+    font-weight: 400;
+}
+
+.counter_bottom {
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.counter_button {
+    width: 200px;
+    height: 40px;
+    font-size: 110%;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.counter_button:focus {
+    outline: 1px solid black;
+}
+
+.counter_button:hover {
+    cursor: pointer;
+}
+
+.counter_button_minus {
+    background: red;
+}
+
+.counter_button_plus {
+    background: green;
+}
+
+.counter_button_minus:hover {
+    background: rgba(255, 0, 0, 0.44);
+    transition: 0.3s;
+}
+
+.counter_button_plus:hover {
+    background: rgba(0, 128, 0, 0.674);
+    transition: 0.3s;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

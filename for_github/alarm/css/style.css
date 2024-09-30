@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: 2px solid rgb(84, 10, 243) !important;
+}
+
+body {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #8E7AB5 30%, #B784B7, #E493B3, #EEA5A6);
+    font-family: "Slackside One", cursive;
+    position: relative;
+}
+
+audio {
+    display: none;
+}
+
+.dialog {
+    background: rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.9);
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70%;
+    padding: 20px 60px;
+    display: none;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    animation-name: toast;
+    animation-duration: 0.4s;
+}
+
+@keyframes toast {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.alarm {
+    height: 500px;
+    width: 500px;
+    background: white;
+    border-radius: 5px;
+}
+
+.alarm-top {
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.alarm-checkbox {
+    all:unset;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 65px;
+    height: 30px;
+    background: grey;
+    border-radius: 50px;
+}
+
+.alarm-checkbox::after {
+    content:"";
+    height: 25px;
+    width: 25px;
+    background: white;
+    position: absolute;
+    top:50%;
+    left:3px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: 0.4s all;
+}
+
+.alarm-checkbox-checked {
+    background: green;
+}
+
+.alarm-checkbox-checked::after {
+    transform: translateX(34px) translateY(-50%);
+}
+
+.alarm-checkbox:hover {
+    cursor: pointer;
+}
+
+.alarm-h1 {
+    font-size: 100px;
+    display: flex;
+}
+
+.alarm-bottom {
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    padding: 10px;
+}
+
+.alarm-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.alarm-button {
+    height: 100%;
+    width: 100%;
+    background: hsl(240, 100%, 43%);
+    border: none;
+    color: white;
+    transition: 0.3s background;
+}
+
+.alarm-button:hover {
+    cursor: pointer;
+    background: hsl(240, 100%, 37%);
+}
+
+@media screen and (max-width: 900px) {
+    .alarm {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .alarm-h1 {
+        font-size: 60px;
+    }
+
+    .dialog {
+        font-size: 50%;
+        flex-direction: row;
+    }
+}

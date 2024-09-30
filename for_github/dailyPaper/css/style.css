@@ -1,0 +1,491 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+    height: 100vh;
+    font-family: "Lato", sans-serif;
+}
+
+a, a:active, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.header {
+    color: white;
+    position: relative;
+}
+
+.video-header {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(65%)
+}
+
+.primary-nav {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+.mobile-nav {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+    background: radial-gradient(circle at center, rgba(7, 4, 192, 0.5) 10%, transparent 30%) black;
+    background-size: 40px 50px;
+    background-repeat: repeat;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s;
+    display: none;
+    animation-name: appear;
+    animation-duration: 0.5s;
+}
+
+.mobile-nav__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    backface-visibility: hidden;
+}
+
+.mobile-li {
+    font-size: 250%;
+    transition: 0.2s all;
+}
+
+.mobile-li:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.first-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.secondary-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.ul-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+.li-nav {
+    font-size: 80%;
+    font-weight: 700;
+}
+
+.li-nav:hover {
+    cursor: pointer;
+}
+
+.header_section {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 40px;
+}
+
+.grote-collectie-section {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 20px;
+    padding-bottom: 60px;
+}
+
+.heading-button {
+    font-weight: 300;
+    font-size: 85%;
+    width: 150px;
+    padding: 15px 0;
+    border: none;
+    border-radius: 100px;
+    background: white;
+    background: linear-gradient(to right, black 50%, white 50%);
+    background-position:right bottom;
+    background-size: 200%;
+    transition: 0.4s ease-out;
+}
+
+.heading-button:hover {
+    cursor: pointer;
+    background-position: left bottom;
+    color: white;
+}
+
+
+.heading-h3, .artikelen-1, .artikelen-3 {
+    font-size: 82%;
+    font-weight: 400;
+}
+
+.heading-h2, .artikelen-2{
+    font-size: 200%;
+    font-weight: 700;
+}
+
+.logo {
+    font-weight: 700%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 0px;
+}
+
+.search {
+    width: 220px;
+    font-size: 100%;
+    border: none;
+    border-radius: 100px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 5px 15px;
+    color: white;
+    outline: none;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.button-secondary {
+    background: linear-gradient(to right, black 50%, transparent 50%);
+    background-size: 200%;
+    background-position: right bottom;
+    transition: 0.4s ease-out;
+    color: white;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 100px;
+    transition: ease-out 0.4s;
+    font-size: 85%;
+}
+
+.button-secondary:hover {
+    cursor: pointer;
+    background-position: left bottom;
+}
+
+.button-third {
+    background: linear-gradient(to right, white 50%, transparent 50%);
+    background-size: 200%;
+    background-position:right bottom;
+    transition: 0.4s ease-out;
+    color: white;
+    font-weight: 300;
+    font-size: 85%;
+    width: 150px;
+    padding: 15px 0;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 100px;
+
+}
+
+.button-third:hover {
+    cursor: pointer;
+    background-position: left bottom;
+    color: black;
+}
+
+.button-icon, .button-wide{
+    display: none;
+    font-size: 110%;
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.button-wide {
+    display: block;
+}
+
+
+.button-icon:hover, .button-wide:hover {
+    cursor: pointer;
+}
+
+.icon-in-button {
+    font-size: 80%;
+    position: absolute;
+    top: 28%;
+    right: 0;
+    padding-right: 10px;
+}
+
+.aanbevolen-artikelen {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.aanbevolen-artikelen1 {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 40px;
+}
+
+.categorie-winkel {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 40px;
+}
+
+.artikelen-1 {
+    color: #afafaf;
+}
+
+.artikelen-2 {
+    font-size: 110%;
+}
+
+.artikelen-3 {
+    color: white;
+}
+
+.products {
+    padding-top: 10px;
+    list-style: none;
+    display: flex;
+    gap: 4px;
+}
+
+.product {
+    height: 430px;
+    width: 25%;
+    gap: 10px;
+    position: relative;
+}
+
+.product div{
+    height:20%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.product-h4 {
+    padding-top: 5px;
+    padding-bottom: 15px;
+    font-size: 85%;
+    font-weight: 600;
+}
+
+.product-h5 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6e6e6e;
+}
+
+.product-figure {
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.img-product {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s all;
+}
+
+.product-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 100px;
+    font-size: 75%;
+    background: black;
+    color: white;
+    transform: scaleX(0);
+    transition: 0.2s all;
+    transform-origin: left;
+}
+
+.product:hover {
+    cursor: pointer;
+}
+
+.product:hover .img-product {
+    transform: scale(1.2);
+}
+
+.product:hover .product-label{
+    transform: scale(1);
+}
+
+.collections {
+    height: 100vh;
+    position: relative;
+    color: white;
+    padding: 20px;
+    padding-top: 25px;
+}
+
+.collections-container {
+    list-style: none;
+    background: url(/img/pexels-gustavo-fring-4148977.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 780px;
+}
+
+.collections-img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.collectie {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+    list-style: none;
+    gap: 15px;
+}
+
+.collectie-grid {
+    position: relative;
+}
+
+.enkele-collectie-section {
+    position: absolute;
+    z-index: 1;
+    bottom: 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 40px;
+}
+
+.collect-figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.collectie-grid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s all;
+    filter: brightness(80%);
+}
+
+.collect-figure:hover .collectie-grid-img {
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 1400px) {
+
+    .collections {
+        padding: 10px;
+    }
+
+    .products {
+        flex-wrap: wrap;
+    }
+
+    .product {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    
+    .collectie {
+        grid-template-columns: 100%;
+    }
+
+    .collections {
+        height: 75vh;
+        padding: 0px;
+    }
+    
+    .grote-collectie-section {
+        padding: 40px;
+    }
+
+    .ul-nav, li.nav, .search-wrapper, .button-secondary, .button-wide {
+        display: none;
+    }
+
+    .primary-nav, .header_section {
+        padding: 10px 20px;
+        padding-bottom: 20px;
+    }
+
+    .button-icon {
+        display: block;
+    }
+
+    .products {
+        flex-wrap: wrap;
+    }
+
+    .product-figure {
+        height: 75%;
+    }
+
+    .product:hover .product-label{
+        transform: scale(1);
+    }
+
+    .product:hover .img-product {
+        transform: scale(1);
+}
+    .mobile-li {
+        font-size: 170%;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .collections {
+        height: auto;
+        padding: 0px;
+    }
+}
+
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        filter:grayscale(0);
+    }
+    to {
+        opacity: 1;
+        filter:grayscale(1);
+    }
+}
